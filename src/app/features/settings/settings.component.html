@@ -1,0 +1,103 @@
+<div class="container py-4">
+  <h1 class="mb-4">Timer Settings</h1>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <!-- Focus Duration -->
+            <div class="mb-3">
+              <label for="focusDuration" class="form-label">
+                Focus Duration (minutes)
+                <small class="text-muted">Default: 25 minutes</small>
+              </label>
+              <input
+                id="focusDuration"
+                type="number"
+                min="1"
+                max="120"
+                class="form-control"
+                [value]="secondsToMinutes(localSettings.focusDuration)"
+                (input)="onFocusChange(+$any($event.target).value)"
+              />
+            </div>
+
+            <!-- Short Break Duration -->
+            <div class="mb-3">
+              <label for="shortBreakDuration" class="form-label">
+                Short Break Duration (minutes)
+                <small class="text-muted">Default: 5 minutes</small>
+              </label>
+              <input
+                id="shortBreakDuration"
+                type="number"
+                min="1"
+                max="30"
+                class="form-control"
+                [value]="secondsToMinutes(localSettings.shortBreakDuration)"
+                (input)="onShortBreakChange(+$any($event.target).value)"
+              />
+            </div>
+
+            <!-- Long Break Duration -->
+            <div class="mb-3">
+              <label for="longBreakDuration" class="form-label">
+                Long Break Duration (minutes)
+                <small class="text-muted">Default: 15 minutes</small>
+              </label>
+              <input
+                id="longBreakDuration"
+                type="number"
+                min="1"
+                max="60"
+                class="form-control"
+                [value]="secondsToMinutes(localSettings.longBreakDuration)"
+                (input)="onLongBreakChange(+$any($event.target).value)"
+              />
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-primary" (click)="onSave()">
+                Save Changes
+              </button>
+              <button type="button" class="btn btn-secondary" (click)="onReset()">
+                Reset to Defaults
+              </button>
+            </div>
+
+            <!-- Success/Error Messages -->
+            <div *ngIf="saveSuccess" class="alert alert-success mt-3 mb-0">
+              Settings saved successfully!
+            </div>
+
+            <div *ngIf="saveError" class="alert alert-danger mt-3 mb-0">
+              Failed to save settings. Please try again.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Info Section -->
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">About Timer Settings</h5>
+          <p class="card-text">
+            The Pomodoro Technique uses focused work sessions followed by short breaks to maximize
+            productivity.
+          </p>
+          <ul>
+            <li><strong>Focus:</strong> Time for concentrated work</li>
+            <li><strong>Short Break:</strong> Quick rest between focus sessions</li>
+            <li><strong>Long Break:</strong> Extended rest after multiple focus sessions</li>
+          </ul>
+          <p class="text-muted small mb-0">
+            <em>Note: Timer settings take effect on new sessions. Any running timer will continue
+              with its current duration.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

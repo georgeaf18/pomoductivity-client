@@ -1,0 +1,15 @@
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999">
+  <div
+    *ngFor="let toast of toasts$ | async"
+    [class]="'alert alert-dismissible fade show ' + getAlertClass(toast.type)"
+    role="alert"
+  >
+    {{ toast.message }}
+    <button
+      type="button"
+      class="btn-close"
+      (click)="close(toast.id)"
+      [attr.aria-label]="'Close'"
+    ></button>
+  </div>
+</div>

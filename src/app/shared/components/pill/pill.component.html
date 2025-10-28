@@ -1,0 +1,10 @@
+<button
+  type="button"
+  [class]="pillClasses"
+  [disabled]="disabled"
+  [attr.aria-pressed]="active"
+  [attr.aria-label]="label"
+  (click)="onClick()"
+>
+  {{ label }}
+</button>

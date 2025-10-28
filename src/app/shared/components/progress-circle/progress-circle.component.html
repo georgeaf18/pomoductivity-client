@@ -1,0 +1,34 @@
+<svg
+  [attr.width]="size"
+  [attr.height]="size"
+  [attr.viewBox]="viewBox"
+  class="progress-circle"
+>
+  <!-- Background circle -->
+  <circle
+    [attr.cx]="center"
+    [attr.cy]="center"
+    [attr.r]="radius"
+    [attr.stroke-width]="strokeWidth"
+    class="progress-circle__bg"
+  />
+
+  <!-- Progress circle -->
+  <circle
+    [attr.cx]="center"
+    [attr.cy]="center"
+    [attr.r]="radius"
+    [attr.stroke-width]="strokeWidth"
+    [attr.stroke]="color"
+    [attr.stroke-dasharray]="circumference"
+    [attr.stroke-dashoffset]="strokeDashoffset"
+    class="progress-circle__progress"
+  />
+
+  <!-- Content slot -->
+  <foreignObject [attr.x]="0" [attr.y]="0" [attr.width]="size" [attr.height]="size">
+    <div class="progress-circle__content">
+      <ng-content></ng-content>
+    </div>
+  </foreignObject>
+</svg>

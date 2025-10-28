@@ -1,0 +1,71 @@
+<div class="container py-4">
+  <h1 class="mb-4">Session History</h1>
+
+  <!-- Statistics Cards -->
+  <div class="row g-3 mb-4" *ngIf="stats$ | async as stats">
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title text-primary">{{ stats.totalSessions }}</h3>
+          <p class="card-text text-muted">Total Sessions</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title text-primary">{{ stats.focusSessions }}</h3>
+          <p class="card-text text-muted">Focus Sessions</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title text-primary">{{ formatDuration(stats.totalFocusTime) }}</h3>
+          <p class="card-text text-muted">Total Focus Time</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title text-primary">{{ stats.shortBreaks + stats.longBreaks }}</h3>
+          <p class="card-text text-muted">Total Breaks</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History List -->
+  <div *ngIf="history$ | async as history">
+    <div *ngIf="history.length === 0" class="alert alert-info text-center">
+      <p class="mb-0">No sessions yet. Start your first Pomodoro!</p>
+    </div>
+
+    <div class="card mb-3" *ngFor="let session of history; trackBy: trackByIndex">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-primary">{{ getSessionTypeLabel(session.type) }}</span>
+          <span [class]="'badge bg-' + (session.status === 'completed' ? 'success' : 'secondary')">
+            {{ session.status }}
+          </span>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <strong>Time:</strong> {{ formatTime(session.startTime) }} - {{ formatTime(session.endTime) }}
+          </div>
+          <div class="col-md-4">
+            <strong>Date:</strong> {{ formatDate(session.startTime) }}
+          </div>
+          <div class="col-md-4">
+            <strong>Duration:</strong> {{ formatDuration(session.duration) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

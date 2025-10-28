@@ -1,0 +1,14 @@
+:host {
+  display: inline-block;
+}
+
+button {
+  user-select: none;
+
+  &:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: theme('colors.primary.500');
+    ring-offset: 2px;
+  }
+}

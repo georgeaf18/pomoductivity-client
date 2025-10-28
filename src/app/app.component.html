@@ -1,0 +1,49 @@
+<div class="d-flex flex-column min-vh-100">
+  <!-- Navigation Header -->
+  <header class="bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <span class="fs-2 me-2">🍅</span>
+        <span class="fw-bold text-primary">{{ title }}</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/timer" routerLinkActive="active">Timer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/history" routerLinkActive="active">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/settings" routerLinkActive="active">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow-1">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top py-3 mt-auto">
+    <div class="container text-center text-muted">
+      <small>Built with Angular & TypeScript | Pomoductivity &copy; 2025</small>
+    </div>
+  </footer>
+
+  <!-- Toast Notifications -->
+  <app-toast></app-toast>
+</div>
