@@ -8,13 +8,14 @@ import {
   SessionType,
   SessionHistoryEntry,
 } from '@core/models/timer.models';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TimerApiService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = 'http://localhost:3000/api';
+  private readonly baseUrl = environment.apiUrl;
 
   public getStatus(): Observable<TimerState> {
     return this.http.get<TimerState>(`${this.baseUrl}/timer/status`);

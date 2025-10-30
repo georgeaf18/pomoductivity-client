@@ -3,12 +3,13 @@ import { Observable, Subject, timer } from 'rxjs';
 import { retry, share, takeUntil } from 'rxjs/operators';
 
 import { TimerState } from '@core/models/timer.models';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WebSocketService {
-  private readonly wsUrl = 'ws://localhost:3000';
+  private readonly wsUrl = environment.wsUrl;
   private socket: WebSocket | null = null;
   private readonly messages$ = new Subject<TimerState>();
   private readonly destroy$ = new Subject<void>();

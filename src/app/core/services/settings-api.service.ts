@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { TimerSettings, SettingsResponse } from '@core/models/timer.models';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SettingsApiService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = 'http://localhost:3000/api';
+  private readonly baseUrl = environment.apiUrl;
 
   public getSettings(): Observable<TimerSettings> {
     return this.http.get<TimerSettings>(`${this.baseUrl}/settings`);
