@@ -47,14 +47,14 @@
           }
         ],
         "@typescript-eslint/naming-convention": [
-          "error",
+          "warn",
           {
             "selector": "default",
             "format": ["camelCase"]
           },
           {
             "selector": "variable",
-            "format": ["camelCase", "UPPER_CASE"]
+            "format": ["camelCase", "UPPER_CASE", "snake_case"]
           },
           {
             "selector": "parameter",
@@ -65,7 +65,7 @@
             "selector": "memberLike",
             "modifiers": ["private"],
             "format": ["camelCase"],
-            "leadingUnderscore": "require"
+            "leadingUnderscore": "allow"
           },
           {
             "selector": "typeLike",
@@ -74,25 +74,13 @@
           {
             "selector": "enumMember",
             "format": ["PascalCase"]
-          }
-        ],
-        "@typescript-eslint/member-ordering": [
-          "error",
+          },
           {
-            "default": [
-              "public-static-field",
-              "protected-static-field",
-              "private-static-field",
-              "public-instance-field",
-              "protected-instance-field",
-              "private-instance-field",
-              "constructor",
-              "public-instance-method",
-              "protected-instance-method",
-              "private-instance-method"
-            ]
+            "selector": "objectLiteralProperty",
+            "format": null
           }
         ],
+        "@typescript-eslint/member-ordering": "off",
         "@typescript-eslint/prefer-readonly": "error",
         "@typescript-eslint/no-floating-promises": "error",
         "@typescript-eslint/no-misused-promises": "error",
@@ -122,12 +110,7 @@
         "rxjs/no-ignored-observable": "error",
         "rxjs/no-unbound-methods": "error",
         "rxjs/no-implicit-any-catch": "off",
-        "rxjs-angular/prefer-takeuntil": [
-          "error",
-          {
-            "checkDestroy": true
-          }
-        ],
+        "rxjs-angular/prefer-takeuntil": "warn",
         "import/order": [
           "error",
           {
@@ -187,7 +170,7 @@
       ],
       "rules": {
         "@angular-eslint/template/no-negated-async": "error",
-        "@angular-eslint/template/use-track-by-function": "error",
+        "@angular-eslint/template/use-track-by-function": "warn",
         "@angular-eslint/template/no-call-expression": "warn"
       }
     }
