@@ -56,11 +56,10 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <strong>Time:</strong> {{ formatTime(session.startTime) }} - {{ formatTime(session.endTime) }}
+            <strong>Time:</strong> {{ formatTime(session.startTime) }} -
+            {{ formatTime(session.endTime) }}
           </div>
-          <div class="col-md-4">
-            <strong>Date:</strong> {{ formatDate(session.startTime) }}
-          </div>
+          <div class="col-md-4"><strong>Date:</strong> {{ formatDate(session.startTime) }}</div>
           <div class="col-md-4">
             <strong>Duration:</strong> {{ formatDuration(session.duration) }}
           </div>
