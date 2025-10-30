@@ -55,6 +55,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+
       - name: Deploy Frontend to server
         run: |
           # Navigate to deployment directory
