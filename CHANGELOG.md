@@ -9,9 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Push notification system using Pushover for timer events (start, stop, complete)
+- Husky pre-commit hooks for automated quality checks
+- Lint-staged for running checks on staged files only
+- Prettier auto-formatting on commit
+- 70% test coverage requirement enforced on commit
+- Automated test execution for related files on commit
 
 ### Fixed
 - Push notifications now properly configured for production deployment
+
+### Development
+- Pre-commit hooks run tests with 70% coverage threshold
+- Auto-formatting with Prettier on commit
+- ESLint auto-fix on commit (client only)
 
 ## [2.0.0] - 2024-10-30
 
