@@ -61,7 +61,7 @@ jobs:
       - name: Deploy Frontend to server
         run: |
           # Navigate to deployment directory
-          cd /srv/pomoductivity
+          cd ~/pomoductivity-deploy
 
           # Set environment variables
           export GITHUB_OWNER=${{ github.repository_owner }}
