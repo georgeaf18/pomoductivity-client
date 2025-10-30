@@ -121,6 +121,7 @@
         "rxjs/no-nested-subscribe": "error",
         "rxjs/no-ignored-observable": "error",
         "rxjs/no-unbound-methods": "error",
+        "rxjs/no-implicit-any-catch": "off",
         "rxjs-angular/prefer-takeuntil": [
           "error",
           {
@@ -130,13 +131,7 @@
         "import/order": [
           "error",
           {
-            "groups": [
-              "builtin",
-              "external",
-              "internal",
-              ["parent", "sibling"],
-              "index"
-            ],
+            "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index"],
             "pathGroups": [
               {
                 "pattern": "@angular/**",

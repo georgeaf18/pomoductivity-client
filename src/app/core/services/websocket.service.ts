@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+
 import { Observable, Subject, timer } from 'rxjs';
 import { retry, share, takeUntil } from 'rxjs/operators';
 
 import { TimerState } from '@core/models/timer.models';
+
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -42,11 +44,9 @@ export class WebSocketService {
         .subscribe(() => this.connect());
     };
 
-    return this.messages$.asObservable().pipe(
-      retry({ count: 3, delay: 3000 }),
-      share(),
-      takeUntil(this.destroy$)
-    );
+    return this.messages$
+      .asObservable()
+      .pipe(retry({ count: 3, delay: 3000 }), share(), takeUntil(this.destroy$));
   }
 
   public disconnect(): void {

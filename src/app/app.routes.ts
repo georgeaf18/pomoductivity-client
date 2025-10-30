@@ -8,8 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'timer',
-    loadComponent: () =>
-      import('./features/timer/timer.component').then((m) => m.TimerComponent),
+    loadComponent: () => import('./features/timer/timer.component').then((m) => m.TimerComponent),
   },
   {
     path: 'history',

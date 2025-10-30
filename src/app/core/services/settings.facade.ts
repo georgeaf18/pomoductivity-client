@@ -1,10 +1,12 @@
 import { Injectable, inject, OnDestroy } from '@angular/core';
+
 import { Observable, Subject, of } from 'rxjs';
 import { tap, takeUntil, catchError } from 'rxjs/operators';
 
 import { TimerSettings } from '@core/models/timer.models';
-import { SettingsApiService } from './settings-api.service';
 import { SettingsStateService } from '@core/state/settings.state';
+
+import { SettingsApiService } from './settings-api.service';
 
 @Injectable({
   providedIn: 'root',
