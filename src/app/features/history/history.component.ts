@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { TimerApiService } from '@core/services/timer-api.service';
 import { SessionHistoryEntry, SessionType } from '@core/models/timer.models';
+import { TimerApiService } from '@core/services/timer-api.service';
 
 interface HistoryStats {
   totalSessions: number;

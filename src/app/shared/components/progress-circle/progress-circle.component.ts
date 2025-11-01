@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-progress-circle',
