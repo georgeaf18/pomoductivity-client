@@ -1,12 +1,14 @@
 import { Injectable, inject, OnDestroy } from '@angular/core';
+
 import { Observable, Subject, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
 import { TimerState, SessionType } from '@core/models/timer.models';
-import { TimerApiService } from './timer-api.service';
-import { WebSocketService } from './websocket.service';
 import { TimerStateService } from '@core/state/timer.state';
+
+import { TimerApiService } from './timer-api.service';
 import { ToastService } from './toast.service';
+import { WebSocketService } from './websocket.service';
 
 @Injectable({
   providedIn: 'root',

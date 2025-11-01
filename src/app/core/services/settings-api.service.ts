@@ -1,8 +1,10 @@
-import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
 import { TimerSettings, SettingsResponse } from '@core/models/timer.models';
+
 import { environment } from '../../../environments/environment';
 
 @Injectable({

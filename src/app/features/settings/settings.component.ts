@@ -1,11 +1,13 @@
-import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { SettingsFacade } from '@core/services/settings.facade';
 import { TimerSettings } from '@core/models/timer.models';
+import { SettingsFacade } from '@core/services/settings.facade';
+
 import { ButtonComponent } from '@shared/components/button/button.component';
 
 @Component({

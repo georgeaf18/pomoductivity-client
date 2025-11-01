@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
 import { ToastService, Toast } from '@core/services/toast.service';

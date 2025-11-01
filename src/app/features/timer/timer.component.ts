@@ -1,10 +1,12 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { TimerFacade } from '@core/services/timer.facade';
 import { TimerState, SessionType } from '@core/models/timer.models';
+import { TimerFacade } from '@core/services/timer.facade';
+
 import { TimeFormatPipe } from '@shared/pipes/time-format.pipe';
 
 @Component({

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { BehaviorSubject, Observable } from 'rxjs';
 
 import { TimerState, SessionType } from '@core/models/timer.models';
