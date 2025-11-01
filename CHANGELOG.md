@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Prettier auto-formatting on commit
 - 65% statement coverage requirement enforced on commit
 - Automated test execution for related files on commit
+- **End-to-end (E2E) testing with Playwright**
+- E2E tests run automatically before each commit
+- E2E tests for timer functionality (start, stop, reset, session switching)
+- E2E tests for navigation and app initialization
 
 ### Fixed
 - Push notifications now properly configured for production deployment
@@ -22,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pre-commit hooks run tests with 65% statement coverage threshold
 - Auto-formatting with Prettier on commit
 - ESLint auto-fix on commit (client only)
+- **E2E tests run before every commit to ensure application functionality**
+- Playwright configured for headless browser testing
 - Coverage exemptions for API services, facades, state files, and feature components
 - Focus on statement coverage instead of branch/function/line coverage
 
